@@ -2,10 +2,10 @@
 
 import { Phone, MessageCircle, Scissors, Sparkles, Droplets, MapPin } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function Hero() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -16,7 +16,7 @@ export default function Hero() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -26,7 +26,7 @@ export default function Hero() {
   };
 
   // Floating animation for decorative elements
-  const floatingVariants = {
+  const floatingVariants: Variants = {
     animate: {
       y: [0, -10, 0],
       transition: {
@@ -67,7 +67,7 @@ export default function Hero() {
             >
               Mastering the Art of <br className="hidden lg:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold">
-                Men's Grooming
+                Men&apos;s Grooming
               </span>
             </motion.h1>
 
@@ -75,7 +75,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-text-muted text-base md:text-lg max-w-xl mb-8 font-light leading-relaxed"
             >
-              Experience the pinnacle of men's grooming. From precision cuts to revitalizing treatments, we craft looks that turn heads and make you feel unstoppable.
+              Experience the pinnacle of men&apos;s grooming. From precision cuts to revitalizing treatments, we craft looks that turn heads and make you feel unstoppable.
             </motion.p>
 
             <motion.div

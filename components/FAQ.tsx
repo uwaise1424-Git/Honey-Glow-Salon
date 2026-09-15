@@ -7,7 +7,7 @@ export default function FAQ() {
   const faqs = [
     {
       question: "Do I need to book an appointment?",
-      answer: "We currently do not take online bookings. Walk-ins are always welcome, and you can also give us a call or send a WhatsApp message to check current wait times.",
+      answer: "We currently do not take online bookings. Walk-ins are always welcome, and you can also give us a call or send a WhatsApp message to enquire.",
     },
     {
       question: "What are your working hours?",
@@ -38,7 +38,8 @@ export default function FAQ() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, delay: 0.2 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
             className="font-serif font-light text-4xl md:text-5xl text-text-primary tracking-tight"
           >
             Frequently Asked <span className="font-medium">Questions</span>

@@ -13,6 +13,7 @@ export default function Services() {
         { name: "Kid's Cut", price: "100" },
         { name: "Hair Wash", price: "50" },
         { name: "Beard Trim / Shave", price: "70" },
+        { name: "Head Oil Massage", price: "300" },
       ],
     },
     {
