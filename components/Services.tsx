@@ -10,6 +10,7 @@ export default function Services() {
       icon: <Scissors className="w-8 h-8 text-gold" />,
       items: [
         { name: "Haircut", price: "130" },
+        { name: "Haircut and Trim", price: "200" },
         { name: "Kid's Cut", price: "100" },
         { name: "Hair Wash", price: "50" },
         { name: "Beard Trim / Shave", price: "70" },

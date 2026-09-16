@@ -9,7 +9,7 @@ export default function About() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
 
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
 
           {/* Image Column */}
           <motion.div
@@ -17,7 +17,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative"
+            className="relative lg:sticky lg:top-32"
           >
             <div className="absolute inset-0 bg-gold/20 rounded-2xl blur-3xl" />
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-gold/30 shadow-2xl">
@@ -57,26 +57,24 @@ export default function About() {
               <span className="text-gold font-medium text-3xl md:text-4xl mt-2 block">20+ Years of Excellence</span>
             </motion.h2>
 
-            {/* Sharpened Body Text */}
+            {/* Expanded & Bolded Body Text */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-5 text-text-muted font-light text-[1.05rem] leading-loose mb-12 tracking-wide"
+              className="space-y-6 text-zinc-300 font-sans font-light text-lg md:text-xl leading-relaxed mb-12 tracking-wide"
             >
               <p>
-                With over two decades of experience in the grooming and beauty industry, Ramalingam has built his career around creativity, precision, and a genuine passion for making people look and feel their absolute best.
+                With over two decades of dedicated experience in the premium grooming and beauty industry, Ramalingam has built a legendary career centered around creativity, absolute precision, and a genuine passion for making every client look and feel their absolute best.
               </p>
               <p>
-                His professional journey began by honing his craft at some of the industry&apos;s most respected names, including <strong className="text-text-primary font-medium">TONI&GUY, Green Trends, and Naturals</strong>. Through these associations, he developed extensive hands-on expertise across all aspects of premium men&apos;s grooming.
+                His professional journey began by rigorously honing his craft at some of the industry&apos;s most respected and demanding names, including <span className="text-[#D4AF37] uppercase tracking-widest text-base">TONI&GUY, Green Trends, and Naturals</span>. Through these elite associations, he developed extensive hands-on expertise across all aspects of modern men&apos;s grooming.
               </p>
               <p>
-                In 2020, Ramalingam took his vision to the next level by founding <strong className="text-text-primary font-medium">Honey Glow Men&apos;s Salon</strong>—creating an exclusive space where high-end professional expertise meets personalized care.
+                Driven by a desire to offer a superior, uncompromised grooming experience, Ramalingam took his vision to the next level in 2020 by founding <span className="text-[#D4AF37] uppercase tracking-widest text-base">Honey Glow Men&apos;s Salon</span>. His goal was simple: to create an exclusive, luxurious space where high-end professional expertise meets personalized, everyday care.
               </p>
-              <p>
-                Today, he specializes in everything from classic and contemporary haircuts to detailed facial treatments and bridal styling. Whether it is a sharp fade or a rejuvenating de-tan, Ramalingam brings the same unmatched dedication and attention to detail to every single chair.
-              </p>
+
             </motion.div>
 
             {/* Stat Badges - Staggered Animation */}
@@ -114,6 +112,31 @@ export default function About() {
                 <span className="text-text-muted text-[9px] font-medium mt-1 uppercase tracking-widest">Certified</span>
               </motion.div>
             </div>
+
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+              className="mt-10 flex items-center"
+            >
+              <a 
+                href="https://www.instagram.com/honey_glow_salon?stkn=MXd4cGthbzU5d3doaA%3D%3D&utm_source=qr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-4 text-zinc-300 hover:text-gold transition-colors group"
+              >
+                <div className="bg-surface/50 p-3.5 rounded-full border border-gold/20 group-hover:border-gold/50 shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-6 md:h-6 text-gold group-hover:text-white transition-colors">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                  </svg>
+                </div>
+                <span className="font-serif text-lg tracking-wide group-hover:text-white transition-colors">Follow on Instagram</span>
+              </a>
+            </motion.div>
           </div>
 
         </div>

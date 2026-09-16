@@ -1,83 +1,232 @@
 "use client";
 
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 
 export default function Gallery() {
-    const galleryImages = [
+    const [selectedId, setSelectedId] = useState<number | null>(null);
+
+    const galleryItems = [
         {
-            url: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop",
-            title: "Precision Tools",
+            id: 1,
+            url: "/fade-cut.jpeg",
+            title: "Precision Fade",
+            category: "Haircut",
+            span: "md:col-span-2 md:row-span-2",
+        },
+        {
+            id: 2,
+            url: "/pompadour-cut.jpeg",
+            title: "Signature Pompadour",
+            category: "Styling",
+            span: "md:col-span-1 md:row-span-2",
+        },
+        {
+            id: 3,
+            url: "/buzz-cut.jpeg",
+            title: "Clean Buzz Cut",
+            category: "Haircut",
+            span: "md:col-span-1 md:row-span-1",
+        },
+        {
+            id: 4,
+            url: "/facial.jpeg",
+            title: "Restorative Facial",
+            category: "Skin Care",
+            span: "md:col-span-2 md:row-span-1",
+        },
+        {
+            id: 5,
+            url: "/frenchcrop-cut.jpeg",
+            title: "Textured French Crop",
+            category: "Haircut",
+            span: "md:col-span-1 md:row-span-2",
+        },
+        {
+            id: 6,
+            url: "/hair-colouring.jpeg",
+            title: "Premium Hair Coloring",
+            category: "Treatment",
+            span: "md:col-span-2 md:row-span-2",
+        },
+        {
+            id: 7,
+            url: "/quiff-cut.jpeg",
+            title: "Modern Quiff",
+            category: "Styling",
+            span: "md:col-span-1 md:row-span-1",
+        },
+        {
+            id: 8,
+            url: "/crew-cut.jpeg",
+            title: "Classic Crew Cut",
+            category: "Haircut",
+            span: "md:col-span-1 md:row-span-1",
+        },
+        {
+            id: 9,
+            url: "/mullet-cut.jpeg",
+            title: "Modern Mullet",
+            category: "Styling",
+            span: "md:col-span-2 md:row-span-1",
+        },
+        {
+            id: 10,
+            url: "/haircut-8.jpeg",
+            title: "Executive Contour",
+            category: "Haircut",
+            span: "md:col-span-1 md:row-span-1",
+        },
+        {
+            id: 11,
+            url: "/haircut-9.jpeg",
+            title: "Scissor Trim",
             category: "Grooming",
+            span: "md:col-span-2 md:row-span-1",
         },
         {
-            url: "/hero.jpeg",
-            title: "The Ambiance",
-            category: "Interior",
+            id: 12,
+            url: "/haircut-10.jpeg",
+            title: "Master Styling",
+            category: "Finish",
+            span: "md:col-span-2 md:row-span-2",
         },
         {
-            url: "https://images.unsplash.com/photo-1621607512214-68297480165e?q=80&w=800&auto=format&fit=crop",
-            title: "Premium Products",
-            category: "Skin & Hair Care",
-        },
-        {
-            url: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop",
-            title: "Classic Techniques",
-            category: "Hot Towel Shave",
+            id: 13,
+            url: "/de-tan.jpeg",
+            title: "Advanced De-Tanning",
+            category: "Skin Care",
+            span: "md:col-span-2 md:row-span-1",
         },
     ];
 
+    const selectedItem = galleryItems.find((item) => item.id === selectedId);
+
     return (
-        <section id="gallery" className="py-20 md:py-32 bg-surface/30 relative border-t border-gold/10 overflow-hidden">
-            <div className="container mx-auto px-6 max-w-7xl">
+        <section id="gallery" className="py-24 px-6 bg-[#050505] min-h-screen">
+            <div className="max-w-7xl mx-auto">
+
+                {/* Header Section */}
                 <div className="text-center mb-16">
                     <motion.span
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6 }}
-                        className="text-gold uppercase tracking-[0.25em] text-xs font-bold mb-4 block"
+                        viewport={{ once: true }}
+                        className="text-[#D4AF37] uppercase tracking-[0.2em] text-xs font-semibold mb-4 block"
                     >
-                        Inside The Salon
+                        The Gallery
                     </motion.span>
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="font-serif font-light text-4xl md:text-5xl text-text-primary tracking-tight"
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
                     >
-                        The Honey Glow <span className="font-medium">Experience</span>
+                        Masterclass In <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-yellow-200">Style.</span>
                     </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-zinc-400 max-w-xl mx-auto text-lg font-light"
+                    >
+                        Browse through our portfolio of signature haircuts, meticulous beard sculpts, and premium grooming services.
+                    </motion.p>
                 </div>
 
-                {/* 2x2 Staggered Grid Layout */}
-                <div className="grid md:grid-cols-2 gap-6">
-                    {galleryImages.map((img, index) => (
+                {/* Masonry / Bento Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-4 md:auto-rows-[250px] grid-flow-dense gap-4 md:gap-6">
+                    {galleryItems.map((item, index) => (
                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 40 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.7, delay: index * 0.2, ease: "easeOut" }}
-                            className="group relative h-[300px] md:h-[400px] overflow-hidden rounded-2xl bg-surface border border-gold/20"
+                            viewport={{ once: true }}
+                            transition={{ delay: (index % 5) * 0.1, duration: 0.5 }}
+                            key={item.id}
+                            layoutId={`gallery-item-${item.id}`} // Magic link for Framer Motion
+                            onClick={() => setSelectedId(item.id)}
+                            className={`group relative overflow-hidden rounded-2xl cursor-pointer shadow-xl h-[250px] md:h-auto ${item.span}`}
                         >
+                            {/* Image inside Grid (Cropped to fit nicely) */}
                             <div
-                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                                style={{ backgroundImage: `url(${img.url})` }}
+                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
+                                style={{ backgroundImage: `url(${item.url})` }}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent transition-opacity duration-300" />
 
-                            <div className="absolute bottom-0 left-0 p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <span className="text-gold text-xs uppercase tracking-widest font-semibold mb-2 block opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                                    {img.category}
+                            {/* Dark Overlay (Darkens strongly on hover) */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+
+                            {/* Hover Text Content */}
+                            <div className="absolute inset-0 p-6 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                                <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-2">
+                                    {item.category}
                                 </span>
-                                <h3 className="font-serif text-2xl text-text-primary font-medium tracking-wide">
-                                    {img.title}
+                                <h3 className="text-xl md:text-2xl font-serif font-bold text-white leading-tight opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                                    {item.title}
                                 </h3>
                             </div>
                         </motion.div>
                     ))}
                 </div>
+
+                {/* FULL SCREEN MODAL OVERLAY */}
+                <AnimatePresence>
+                    {selectedId && selectedItem && (
+                        <>
+                            {/* Dark blurred background */}
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                onClick={() => setSelectedId(null)}
+                                className="fixed inset-0 bg-black/95 backdrop-blur-xl z-[60] cursor-pointer"
+                            />
+
+                            {/* The expanded image container */}
+                            <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 md:p-12 pointer-events-none">
+                                <motion.div
+                                    layoutId={`gallery-item-${selectedItem.id}`} // Matches the grid item!
+                                    className="relative w-full max-w-5xl h-full max-h-[85vh] bg-transparent rounded-2xl overflow-hidden pointer-events-auto flex flex-col"
+                                >
+                                    {/* Close Button */}
+                                    <button
+                                        onClick={() => setSelectedId(null)}
+                                        className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-[#D4AF37] text-white hover:text-black p-3 rounded-full backdrop-blur-md transition-all duration-300"
+                                    >
+                                        <X className="w-6 h-6" />
+                                    </button>
+
+                                    {/* Full Uncropped Image */}
+                                    <img
+                                        src={selectedItem.url}
+                                        alt={selectedItem.title}
+                                        // 'object-contain' ensures the whole image is visible without cropping!
+                                        className="w-full h-full object-contain drop-shadow-2xl"
+                                    />
+
+                                    {/* Text underneath the full image */}
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.3 }}
+                                        className="absolute bottom-0 left-0 w-full p-6 md:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent"
+                                    >
+                                        <span className="text-[#D4AF37] text-sm font-bold uppercase tracking-widest block mb-2">
+                                            {selectedItem.category}
+                                        </span>
+                                        <h3 className="text-3xl md:text-4xl font-serif font-bold text-white">
+                                            {selectedItem.title}
+                                        </h3>
+                                    </motion.div>
+                                </motion.div>
+                            </div>
+                        </>
+                    )}
+                </AnimatePresence>
+
             </div>
         </section>
     );

@@ -1,10 +1,26 @@
 "use client";
 
 import { Phone, MessageCircle, Scissors, Sparkles, Droplets, MapPin } from "lucide-react";
-import Image from "next/image";
-import { motion, Variants } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+import { useState, useEffect } from "react";
+
+const backgroundImages = [
+  "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=2000&auto=format&fit=crop", // Barber cutting hair
+  "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2000&auto=format&fit=crop", // Luxury interior / barber tools
+  "https://images.unsplash.com/photo-1621607512214-68297480165e?q=80&w=2000&auto=format&fit=crop", // Men's shaving/facial prep
+  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2000&auto=format&fit=crop", // Man getting beard trim
+];
 
 export default function Hero() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -25,68 +41,69 @@ export default function Hero() {
     },
   };
 
-  // Floating animation for decorative elements
-  const floatingVariants: Variants = {
-    animate: {
-      y: [0, -10, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   return (
-    <section id="home" className="relative min-h-screen pt-24 pb-12 flex items-center overflow-hidden bg-background">
-
-      {/* Abstract Background Design */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[80px]" />
+    <section id="home" className="relative min-h-screen pt-24 pb-12 flex items-center overflow-hidden bg-background/black">
+      {/* Animated Background Images with Ken Burns Effect */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentImage}
+            src={backgroundImages[currentImage]}
+            alt="Salon Background"
+            initial={{ opacity: 0, scale: 1 }}
+            animate={{ opacity: 1, scale: 1.1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            transition={{ 
+              opacity: { duration: 1.5, ease: "easeInOut" },
+              scale: { duration: 10, ease: "linear" }
+            }}
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+        </AnimatePresence>
+        
+        {/* Gradient Overlay for Readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/40 z-10" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-
-          {/* Left Column: Text & CTA */}
+      <div className="container relative z-20 mx-auto px-6 max-w-7xl">
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="flex flex-col items-center lg:items-start text-center lg:text-left z-20"
+            className="max-w-3xl"
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-semibold uppercase tracking-widest mb-6 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-gold text-xs font-semibold uppercase tracking-widest mb-6 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Premium Salon Experience</span>
+              <span className="text-zinc-300">Premium Salon Experience</span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="font-serif font-bold text-5xl md:text-6xl lg:text-7xl tracking-tight text-text-primary mb-6 leading-[1.1]"
+              className="font-serif font-bold text-5xl md:text-6xl lg:text-7xl tracking-tight text-white mb-6 leading-[1.1] drop-shadow-xl"
             >
               Mastering the Art of <br className="hidden lg:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-yellow-200 to-[#D4AF37]">
                 Men&apos;s Grooming
               </span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="text-text-muted text-base md:text-lg max-w-xl mb-8 font-light leading-relaxed"
+              className="font-serif italic text-zinc-200/90 text-lg md:text-xl max-w-xl mb-10 font-light leading-relaxed tracking-wide drop-shadow-lg"
             >
               Experience the pinnacle of men&apos;s grooming. From precision cuts to revitalizing treatments, we craft looks that turn heads and make you feel unstoppable.
             </motion.p>
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12"
             >
               <a
                 href="https://wa.me/917449223356?text=Hi%2C%20I%27d%20like%20to%20enquire."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-background font-semibold py-3.5 px-8 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] text-sm tracking-wide"
+                className="flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-yellow-500 text-black font-semibold py-3.5 px-8 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] text-sm tracking-wide"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Enquire</span>
@@ -94,7 +111,7 @@ export default function Hero() {
 
               <a
                 href="tel:+917449223356"
-                className="flex items-center justify-center gap-2 bg-transparent border border-gold/40 text-gold hover:bg-gold/10 font-semibold py-3.5 px-8 rounded-full transition-all duration-300 text-sm tracking-wide"
+                className="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-md border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#D4AF37]/10 font-semibold py-3.5 px-8 rounded-full transition-all duration-300 text-sm tracking-wide"
               >
                 <Phone className="w-4 h-4" />
                 <span>Call Us</span>
@@ -102,61 +119,24 @@ export default function Hero() {
             </motion.div>
 
             {/* Quick Stats/Features */}
-            <motion.div variants={itemVariants} className="mt-12 grid grid-cols-3 gap-6 border-t border-white/5 pt-8 w-full max-w-lg">
+            <motion.div variants={itemVariants} className="grid grid-cols-3 gap-6 border-t border-white/20 pt-8 w-full max-w-lg">
               <div className="flex flex-col items-center lg:items-start">
-                <Scissors className="w-6 h-6 text-gold mb-2 opacity-80" />
-                <span className="text-text-primary font-bold text-lg">Master</span>
-                <span className="text-text-muted text-xs uppercase tracking-wider">Stylist</span>
+                <Scissors className="w-6 h-6 text-[#D4AF37] mb-2 opacity-90" />
+                <span className="text-white font-bold text-lg drop-shadow-sm">Master</span>
+                <span className="text-zinc-300 text-xs uppercase tracking-wider drop-shadow-sm">Stylist</span>
               </div>
               <div className="flex flex-col items-center lg:items-start">
-                <Droplets className="w-6 h-6 text-gold mb-2 opacity-80" />
-                <span className="text-text-primary font-bold text-lg">Premium</span>
-                <span className="text-text-muted text-xs uppercase tracking-wider">Products</span>
+                <Droplets className="w-6 h-6 text-[#D4AF37] mb-2 opacity-90" />
+                <span className="text-white font-bold text-lg drop-shadow-sm">Premium</span>
+                <span className="text-zinc-300 text-xs uppercase tracking-wider drop-shadow-sm">Products</span>
               </div>
               <div className="flex flex-col items-center lg:items-start">
-                <MapPin className="w-6 h-6 text-gold mb-2 opacity-80" />
-                <span className="text-text-primary font-bold text-lg">Walajapet</span>
-                <span className="text-text-muted text-xs uppercase tracking-wider">Location</span>
+                <MapPin className="w-6 h-6 text-[#D4AF37] mb-2 opacity-90" />
+                <span className="text-white font-bold text-lg drop-shadow-sm">Walajapet</span>
+                <span className="text-zinc-300 text-xs uppercase tracking-wider drop-shadow-sm">Location</span>
               </div>
             </motion.div>
           </motion.div>
-
-          {/* Right Column: Image Composition */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="relative hidden lg:block h-[600px] w-full"
-          >
-            {/* Main large image */}
-            <div className="absolute top-0 right-0 w-4/5 h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
-              <Image
-                src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=1000"
-                alt="Barber cutting hair"
-                fill
-                priority
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-colors duration-500"></div>
-            </div>
-
-            {/* Overlapping smaller image */}
-            <motion.div
-              variants={floatingVariants}
-              animate="animate"
-              className="absolute bottom-10 left-0 w-[280px] h-[320px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-4 border-background"
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=600"
-                alt="Salon tools"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-black/10"></div>
-            </motion.div>
-
-          </motion.div>
-
         </div>
       </div>
     </section>
