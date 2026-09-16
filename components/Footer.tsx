@@ -29,24 +29,48 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="flex gap-4">
-              {/* Updated WhatsApp Link with new enquiry message */}
-              <a
-                href="https://wa.me/917449223356?text=Hi%2C%20I%20have%20an%20enquiry."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-surface border border-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-background transition-all duration-300 shadow-lg hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:-translate-y-1"
-                aria-label="WhatsApp"
-              >
-                <MessageCircle className="w-5 h-5" />
-              </a>
-              <a
-                href="tel:+917449223356"
-                className="w-12 h-12 rounded-full bg-surface border border-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-background transition-all duration-300 shadow-lg hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:-translate-y-1"
-                aria-label="Call Us"
-              >
-                <Phone className="w-5 h-5" />
-              </a>
+            <div className="flex flex-col gap-4">
+              {/* Primary Contact */}
+              <div className="flex items-center gap-3">
+                <a
+                  href="tel:+917449223356"
+                  className="w-10 h-10 shrink-0 rounded-full bg-surface border border-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-background transition-all duration-300 shadow-lg hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+                  aria-label="Call Primary"
+                >
+                  <Phone className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://wa.me/917449223356?text=Hi%2C%20I%20have%20an%20enquiry."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 shrink-0 rounded-full bg-surface border border-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-background transition-all duration-300 shadow-lg hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+                  aria-label="WhatsApp Primary"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+                <span className="text-text-muted text-sm font-light tracking-wide">+91 74492 23356</span>
+              </div>
+
+              {/* Alternative Contact */}
+              <div className="flex items-center gap-3">
+                <a
+                  href="tel:+919538329732"
+                  className="w-10 h-10 shrink-0 rounded-full bg-surface border border-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-background transition-all duration-300 shadow-lg hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+                  aria-label="Call Alternative"
+                >
+                  <Phone className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://wa.me/919538329732?text=Hi%2C%20I%20have%20an%20enquiry."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 shrink-0 rounded-full bg-surface border border-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-background transition-all duration-300 shadow-lg hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+                  aria-label="WhatsApp Alternative"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+                <span className="text-text-muted text-sm font-light tracking-wide">+91 95383 29732</span>
+              </div>
             </div>
           </div>
 

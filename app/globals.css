@@ -1,15 +1,53 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0A0A0A;
-  --color-surface: #141414;
+  --color-background: #050505;
+  --color-surface: #0A0A0A;
 
-  /* Burnished Copper */
-  --color-gold: #B87333;
-  --color-gold-light: #D48C46;
+  /* Premium Gold Accent */
+  --color-gold: #D4AF37;
+  --color-gold-light: #FDE047;
 
-  --color-text-primary: #EDEDED;
-  --color-text-muted: #737373;
+  --color-text-primary: #FFFFFF;
+  --color-text-muted: #D4D4D8; /* zinc-300 */
+
+  /* Typography System */
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-open-sans), sans-serif;
+  --font-display: var(--font-montserrat), sans-serif;
+  --font-description: var(--font-lora), serif;
+}
+
+@layer base {
+  /* Main Page Titles */
+  h1 {
+    @apply font-serif font-bold text-white leading-[1.05] tracking-tight;
+  }
+  
+  /* Major Section Headlines */
+  h2 {
+    @apply font-serif font-bold text-white leading-tight;
+  }
+  
+  /* Subsection Titles */
+  h3 {
+    @apply font-serif font-bold text-zinc-100;
+  }
+  
+  /* Standard Body Text */
+  p {
+    @apply font-sans font-normal text-zinc-300 leading-relaxed;
+  }
+  
+  /* Mission/Descriptive Text */
+  p.description {
+    @apply font-description font-light italic text-zinc-300 leading-loose;
+  }
+  
+  /* Small, uppercase headers */
+  span.preheader, .preheader {
+    @apply font-display font-semibold uppercase text-zinc-400 tracking-[0.15em] text-xs;
+  }
 }
 
 body {

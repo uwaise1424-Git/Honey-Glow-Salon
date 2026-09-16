@@ -32,8 +32,8 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${isScrolled
-          ? "bg-surface/90 backdrop-blur-md border-b border-gold/20 py-4 shadow-lg"
-          : "bg-transparent border-transparent py-6"
+        ? "bg-surface/90 backdrop-blur-md border-b border-gold/20 py-4 shadow-lg"
+        : "bg-transparent border-transparent py-6"
         }`}
     >
       <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
@@ -63,7 +63,7 @@ export default function Navbar() {
             className="flex items-center gap-2 bg-gold hover:bg-gold-light text-background font-semibold py-2.5 px-6 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:scale-105"
           >
             <MessageCircle className="w-4 h-4" />
-            <span className="text-sm tracking-wide">WhatsApp</span>
+            <span className="text-sm tracking-wide">Contact Us</span>
           </a>
         </div>
 
@@ -107,7 +107,7 @@ export default function Navbar() {
               className="flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-background font-semibold py-3.5 px-6 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)]"
             >
               <MessageCircle className="w-5 h-5" />
-              WhatsApp
+              whatsapp
             </a>
           </motion.div>
         )}

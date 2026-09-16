@@ -35,27 +35,25 @@ export default function About() {
 
           {/* Text Column */}
           <div>
-            <motion.span
+            {/* Cohesive, Premium Editorial Heading */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6 }}
-              className="text-gold uppercase tracking-[0.25em] text-xs font-bold mb-4 block"
+              className="mb-10"
             >
-              Meet The Founder
-            </motion.span>
-
-            {/* Sharpened Heading */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-serif font-light text-4xl md:text-5xl text-text-primary tracking-tight mb-8 leading-tight"
-            >
-              Ramalingam <br />
-              <span className="text-gold font-medium text-3xl md:text-4xl mt-2 block">20+ Years of Excellence</span>
-            </motion.h2>
+              <span className="preheader inline-flex items-center gap-4 text-gold mb-6">
+                <span className="w-10 h-[1px] bg-gold/50"></span>
+                Meet The Founder
+              </span>
+              <h2 className="text-5xl md:text-6xl lg:text-[4.5rem] mb-3 leading-none tracking-tighter">
+                Ramalingam
+              </h2>
+              <span className="description block text-gold text-2xl md:text-3xl opacity-90">
+                20+ Years of Excellence
+              </span>
+            </motion.div>
 
             {/* Expanded & Bolded Body Text */}
             <motion.div
@@ -63,7 +61,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-6 text-zinc-300 font-sans font-light text-lg md:text-xl leading-relaxed mb-12 tracking-wide"
+              className="space-y-6 mb-12"
             >
               <p>
                 With over two decades of dedicated experience in the premium grooming and beauty industry, Ramalingam has built a legendary career centered around creativity, absolute precision, and a genuine passion for making every client look and feel their absolute best.
@@ -121,17 +119,17 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.9 }}
               className="mt-10 flex items-center"
             >
-              <a 
-                href="https://www.instagram.com/honey_glow_salon?stkn=MXd4cGthbzU5d3doaA%3D%3D&utm_source=qr" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.instagram.com/honey_glow_salon?stkn=MXd4cGthbzU5d3doaA%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-4 text-zinc-300 hover:text-gold transition-colors group"
               >
                 <div className="bg-surface/50 p-3.5 rounded-full border border-gold/20 group-hover:border-gold/50 shadow-lg transition-all duration-300 group-hover:-translate-y-1">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-6 md:h-6 text-gold group-hover:text-white transition-colors">
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                   </svg>
                 </div>
                 <span className="font-serif text-lg tracking-wide group-hover:text-white transition-colors">Follow on Instagram</span>

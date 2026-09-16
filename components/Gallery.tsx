@@ -16,13 +16,6 @@ export default function Gallery() {
             span: "md:col-span-2 md:row-span-2",
         },
         {
-            id: 2,
-            url: "/pompadour-cut.jpeg",
-            title: "Signature Pompadour",
-            category: "Styling",
-            span: "md:col-span-1 md:row-span-2",
-        },
-        {
             id: 3,
             url: "/buzz-cut.jpeg",
             title: "Clean Buzz Cut",
@@ -34,14 +27,14 @@ export default function Gallery() {
             url: "/facial.jpeg",
             title: "Restorative Facial",
             category: "Skin Care",
-            span: "md:col-span-2 md:row-span-1",
+            span: "md:col-span-1 md:row-span-1",
         },
         {
             id: 5,
             url: "/frenchcrop-cut.jpeg",
             title: "Textured French Crop",
             category: "Haircut",
-            span: "md:col-span-1 md:row-span-2",
+            span: "md:col-span-2 md:row-span-1",
         },
         {
             id: 6,
@@ -51,20 +44,6 @@ export default function Gallery() {
             span: "md:col-span-2 md:row-span-2",
         },
         {
-            id: 7,
-            url: "/quiff-cut.jpeg",
-            title: "Modern Quiff",
-            category: "Styling",
-            span: "md:col-span-1 md:row-span-1",
-        },
-        {
-            id: 8,
-            url: "/crew-cut.jpeg",
-            title: "Classic Crew Cut",
-            category: "Haircut",
-            span: "md:col-span-1 md:row-span-1",
-        },
-        {
             id: 9,
             url: "/mullet-cut.jpeg",
             title: "Modern Mullet",
@@ -72,39 +51,25 @@ export default function Gallery() {
             span: "md:col-span-2 md:row-span-1",
         },
         {
-            id: 10,
-            url: "/haircut-8.jpeg",
-            title: "Executive Contour",
-            category: "Haircut",
-            span: "md:col-span-1 md:row-span-1",
-        },
-        {
-            id: 11,
-            url: "/haircut-9.jpeg",
-            title: "Scissor Trim",
-            category: "Grooming",
-            span: "md:col-span-2 md:row-span-1",
-        },
-        {
             id: 12,
             url: "/haircut-10.jpeg",
             title: "Master Styling",
             category: "Finish",
-            span: "md:col-span-2 md:row-span-2",
+            span: "md:col-span-1 md:row-span-1",
         },
         {
             id: 13,
             url: "/de-tan.jpeg",
             title: "Advanced De-Tanning",
             category: "Skin Care",
-            span: "md:col-span-2 md:row-span-1",
+            span: "md:col-span-1 md:row-span-1",
         },
     ];
 
     const selectedItem = galleryItems.find((item) => item.id === selectedId);
 
     return (
-        <section id="gallery" className="py-24 px-6 bg-[#050505] min-h-screen">
+        <section id="gallery" className="py-24 px-6 bg-background min-h-screen">
             <div className="max-w-7xl mx-auto">
 
                 {/* Header Section */}
@@ -113,7 +78,7 @@ export default function Gallery() {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-[#D4AF37] uppercase tracking-[0.2em] text-xs font-semibold mb-4 block"
+                        className="preheader text-gold mb-4 block"
                     >
                         The Gallery
                     </motion.span>
@@ -122,16 +87,16 @@ export default function Gallery() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
+                        className="text-4xl md:text-5xl mb-6"
                     >
-                        Masterclass In <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-yellow-200">Style.</span>
+                        Masterclass In <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-gold)] to-[var(--color-gold-light)]">Style.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-zinc-400 max-w-xl mx-auto text-lg font-light"
+                        className="description max-w-xl mx-auto text-lg"
                     >
                         Browse through our portfolio of signature haircuts, meticulous beard sculpts, and premium grooming services.
                     </motion.p>
@@ -161,10 +126,10 @@ export default function Gallery() {
 
                             {/* Hover Text Content */}
                             <div className="absolute inset-0 p-6 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                                <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-2">
+                                <span className="preheader text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-2">
                                     {item.category}
                                 </span>
-                                <h3 className="text-xl md:text-2xl font-serif font-bold text-white leading-tight opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                                <h3 className="text-xl md:text-2xl text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                                     {item.title}
                                 </h3>
                             </div>
@@ -214,10 +179,10 @@ export default function Gallery() {
                                         transition={{ delay: 0.3 }}
                                         className="absolute bottom-0 left-0 w-full p-6 md:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent"
                                     >
-                                        <span className="text-[#D4AF37] text-sm font-bold uppercase tracking-widest block mb-2">
+                                        <span className="preheader text-gold block mb-2">
                                             {selectedItem.category}
                                         </span>
-                                        <h3 className="text-3xl md:text-4xl font-serif font-bold text-white">
+                                        <h3 className="text-3xl md:text-4xl text-white">
                                             {selectedItem.title}
                                         </h3>
                                     </motion.div>
