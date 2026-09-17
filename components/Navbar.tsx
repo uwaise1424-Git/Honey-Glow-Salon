@@ -107,7 +107,7 @@ export default function Navbar() {
               className="flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-background font-semibold py-3.5 px-6 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)]"
             >
               <MessageCircle className="w-5 h-5" />
-              whatsapp
+              Contact Us
             </a>
           </motion.div>
         )}

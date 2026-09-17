@@ -7,19 +7,6 @@ export default function OurStoryPage() {
     return (
         <main className="relative min-h-screen text-text-primary flex flex-col pt-32 pb-0">
 
-            {/* 1. The Subtle Background Image & Overlays */}
-            <div className="absolute inset-0 z-0 fixed">
-                <Image
-                    src="/hero.jpeg"
-                    alt="Honey Glow Salon Interior"
-                    fill
-                    className="object-cover object-center"
-                    priority
-                />
-                {/* Heavy Charcoal dimming so text stays highly readable */}
-                <div className="absolute inset-0 bg-background/90" />
-                <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background/90" />
-            </div>
 
             {/* Navbar sits on top */}
             <div className="relative z-20">
