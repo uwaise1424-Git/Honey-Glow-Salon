@@ -7,23 +7,23 @@ import Link from "next/link";
 export default function Reviews() {
   const reviews = [
     {
-      name: "Verified Client",
+      name: "Tamil Selvan",
       text: "Amazing service, very professional and friendly staff!",
     },
     {
-      name: "Verified Client",
-      text: "Loved my haircut, exactly what I wanted!",
+      name: "Mohan",
+      text: "Great ambience and good customer handling Satisfied with their hairstyling.",
     },
     {
-      name: "Verified Client",
+      name: "Aaron Chellaya",
       text: "I've been getting my haircuts at this salon for the past two years, and the experience has always been excellent. The service is consistent, professional, and truly focused on customer satisfaction. I also chose this salon for my wedding grooming and makeup, and I was more than happy with the results. Everything was done with great attention to detail, and I felt confident and well-prepared on my big day. Fully satisfied and highly recommend this salon for anyone looking for quality grooming services.",
     },
     {
-      name: "Verified Client",
+      name: "Barani Dharan",
       text: "Came for a haircut and completely satisfied, last time my hair cut went miserably failed in chennai and I came here for correction and completely satisfied with the service. Highly recommended.",
     },
     {
-      name: "Verified Client",
+      name: "Harish",
       text: "Service is so good and used only branded products for both facial and Hair colouring.",
     },
   ];

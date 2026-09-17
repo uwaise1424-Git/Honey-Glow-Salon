@@ -2,7 +2,7 @@
 
 
 
-import { Phone, MessageCircle, Scissors, Sparkles, Droplets, MapPin } from "lucide-react";
+import { Phone, MessageCircle, Scissors, Sparkles, Crown, MapPin } from "lucide-react";
 
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
@@ -192,7 +192,7 @@ export default function Hero() {
 
                 rel="noopener noreferrer"
 
-                className="flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-yellow-500 text-black font-semibold py-3.5 px-8 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] text-sm tracking-wide"
+                className="flex items-center justify-center gap-2 bg-gold hover:bg-gold/80 text-black font-semibold py-3.5 px-8 rounded-full transition-all duration-300 shadow-lg shadow-gold/30 hover:shadow-xl hover:shadow-gold/50 text-sm tracking-wide"
 
               >
 
@@ -208,7 +208,7 @@ export default function Hero() {
 
                 href="tel:+917449223356"
 
-                className="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-md border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#D4AF37]/10 font-semibold py-3.5 px-8 rounded-full transition-all duration-300 text-sm tracking-wide"
+                className="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-md border border-gold/40 text-gold hover:bg-gold/10 font-semibold py-3.5 px-8 rounded-full transition-all duration-300 text-sm tracking-wide"
 
               >
 
@@ -228,7 +228,7 @@ export default function Hero() {
 
               <div className="flex flex-col items-center">
 
-                <Scissors className="w-6 h-6 text-[#D4AF37] mb-2 opacity-90" />
+                <Scissors className="w-6 h-6 text-gold mb-2 opacity-90" />
 
                 <span className="text-white font-bold text-lg drop-shadow-sm">Master</span>
 
@@ -238,7 +238,7 @@ export default function Hero() {
 
               <div className="flex flex-col items-center">
 
-                <Droplets className="w-6 h-6 text-[#D4AF37] mb-2 opacity-90" />
+                <Crown className="w-6 h-6 text-gold mb-2 opacity-90" />
 
                 <span className="text-white font-bold text-lg drop-shadow-sm">Premium</span>
 
@@ -248,7 +248,7 @@ export default function Hero() {
 
               <div className="flex flex-col items-center">
 
-                <MapPin className="w-6 h-6 text-[#D4AF37] mb-2 opacity-90" />
+                <MapPin className="w-6 h-6 text-gold mb-2 opacity-90" />
 
                 <span className="text-white font-bold text-lg drop-shadow-sm">Walajapet</span>
 

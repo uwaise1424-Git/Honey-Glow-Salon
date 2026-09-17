@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="about" className="py-20 md:py-32 relative overflow-hidden bg-background">
       {/* Top divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
 
@@ -43,14 +43,21 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="mb-10"
             >
-              <span className="preheader inline-flex items-center gap-4 text-gold mb-6">
-                <span className="w-10 h-[1px] bg-gold/50"></span>
-                Meet The Founder
-              </span>
-              <h2 className="text-5xl md:text-6xl lg:text-[4.5rem] mb-3 leading-none tracking-tighter">
+              {/* Small, elegant pre-header */}
+              <div className="flex items-center gap-4 mb-4">
+                <span className="w-12 h-[1px] bg-gold/60"></span>
+                <span className="font-serif font-bold uppercase tracking-[0.2em] text-sm text-zinc-300">
+                  Meet The Founder
+                </span>
+              </div>
+
+              {/* Large, premium serif font for the Name */}
+              <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-4 leading-tight tracking-tight">
                 Ramalingam
               </h2>
-              <span className="description block text-gold text-2xl md:text-3xl opacity-90">
+
+              {/* Appropriately sized italic serif restoring the custom gold */}
+              <span className="font-serif italic text-gold text-xl md:text-2xl font-light opacity-90 block">
                 20+ Years of Excellence
               </span>
             </motion.div>
@@ -60,19 +67,18 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-6 mb-12"
             >
-              <p>
+              <p className="font-description font-light italic text-zinc-300 leading-loose text-lg md:text-xl drop-shadow-lg">
                 With over two decades of dedicated experience in the premium grooming and beauty industry, Ramalingam has built a legendary career centered around creativity, absolute precision, and a genuine passion for making every client look and feel their absolute best.
               </p>
-              <p>
-                His professional journey began by rigorously honing his craft at some of the industry&apos;s most respected and demanding names, including <span className="text-[#D4AF37] uppercase tracking-widest text-base">TONI&GUY, Green Trends, and Naturals</span>. Through these elite associations, he developed extensive hands-on expertise across all aspects of modern men&apos;s grooming.
+              <p className="font-description font-light italic text-zinc-300 leading-loose text-lg md:text-xl drop-shadow-lg">
+                His professional journey began by rigorously honing his craft at some of the industry&apos;s most respected and demanding names, including TONI&GUY, Green Trends, and Naturals. Through these elite associations, he developed extensive hands-on expertise across all aspects of modern men&apos;s grooming.
               </p>
-              <p>
-                Driven by a desire to offer a superior, uncompromised grooming experience, Ramalingam took his vision to the next level in 2020 by founding <span className="text-[#D4AF37] uppercase tracking-widest text-base">Honey Glow Men&apos;s Salon</span>. His goal was simple: to create an exclusive, luxurious space where high-end professional expertise meets personalized, everyday care.
+              <p className="font-description font-light italic text-zinc-300 leading-loose text-lg md:text-xl drop-shadow-lg">
+                Driven by a desire to offer a superior, uncompromised grooming experience, Ramalingam took his vision to the next level in 2020 by founding Honey Glow Men&apos;s Salon. His goal was simple: to create an exclusive, luxurious space where high-end professional expertise meets personalized, everyday care.
               </p>
-
             </motion.div>
 
             {/* Stat Badges - Staggered Animation */}
@@ -81,33 +87,33 @@ export default function About() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="bg-surface/50 backdrop-blur-sm border border-gold/20 rounded-lg p-4 text-center shadow-lg transition-transform hover:-translate-y-1"
+              >
+                <span className="block text-gold font-serif font-bold text-3xl mb-1 tracking-tighter">20+</span>
+                <span className="text-zinc-400 font-serif font-bold text-[10px] uppercase tracking-widest">Years Exp</span>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="bg-surface/50 backdrop-blur-sm border border-gold/20 rounded-lg p-4 text-center shadow-lg transition-transform hover:-translate-y-1"
+              >
+                <span className="block text-gold font-serif font-bold text-3xl mb-1 tracking-tighter">2020</span>
+                <span className="text-zinc-400 font-serif font-bold text-[10px] uppercase tracking-widest">Founded</span>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="bg-surface/50 backdrop-blur-sm border border-gold/20 rounded-lg p-4 text-center shadow-lg transition-transform hover:-translate-y-1"
-              >
-                <span className="block text-gold font-semibold text-3xl mb-1 tracking-tighter">20+</span>
-                <span className="text-text-primary text-[10px] font-medium uppercase tracking-widest">Years Exp</span>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.7 }}
-                className="bg-surface/50 backdrop-blur-sm border border-gold/20 rounded-lg p-4 text-center shadow-lg transition-transform hover:-translate-y-1"
-              >
-                <span className="block text-gold font-semibold text-3xl mb-1 tracking-tighter">2020</span>
-                <span className="text-text-primary text-[10px] font-medium uppercase tracking-widest">Founded</span>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.8 }}
                 className="bg-surface/50 backdrop-blur-sm border border-gold/20 rounded-lg p-3 text-center shadow-lg transition-transform hover:-translate-y-1 flex flex-col justify-center"
               >
-                <span className="block text-gold font-bold text-sm leading-tight tracking-wide">TONI&GUY<br />Naturals</span>
-                <span className="text-text-muted text-[9px] font-medium mt-1 uppercase tracking-widest">Certified</span>
+                <span className="block text-gold font-serif font-bold text-sm leading-tight tracking-wide">TONI&GUY<br />Naturals</span>
+                <span className="text-zinc-400 font-serif font-bold text-[9px] mt-1 uppercase tracking-widest">Certified</span>
               </motion.div>
             </div>
 
@@ -116,7 +122,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.9 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
               className="mt-10 flex items-center"
             >
               <a

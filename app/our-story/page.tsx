@@ -57,20 +57,20 @@ export default function OurStoryPage() {
                 {/* The Narrative - Visual Layout */}
                 <div className="space-y-16 mb-24 max-w-4xl mx-auto">
                     {/* Section 1 */}
-                    <div className="space-y-6 text-text-primary/90 text-lg md:text-xl font-light leading-relaxed drop-shadow-md text-center">
+                    <div className="space-y-6 text-center drop-shadow-md">
                         <h2 className="text-3xl md:text-4xl font-serif text-gold mb-6">A Grooming Sanctuary</h2>
-                        <p>
+                        <p className="font-description font-light italic text-zinc-300 leading-loose text-lg md:text-xl drop-shadow-lg">
                             Since opening its doors in 2020, Honey Glow Men&apos;s Salon has grown from a singular vision into Walajapet&apos;s premier grooming sanctuary. We didn&apos;t just want to create a place for haircuts; we set out to build an environment where men could unwind, reset, and elevate their personal style. It is a space built on a foundation of experience, unwavering trust, artistic creativity, and genuine personal connection.
                         </p>
                     </div>
 
                     {/* Section 2 */}
-                    <div className="space-y-6 text-text-primary/90 text-lg md:text-xl font-light leading-relaxed drop-shadow-md text-center pt-8 border-t border-white/5">
+                    <div className="space-y-6 text-center pt-8 border-t border-white/5 drop-shadow-md">
                         <h2 className="text-3xl md:text-4xl font-serif text-gold mb-6">Mastery & Precision</h2>
-                        <p>
+                        <p className="font-description font-light italic text-zinc-300 leading-loose text-lg md:text-xl drop-shadow-lg">
                             With founder Ramalingam&apos;s two decades of rigorous industry knowledge behind it, every service at Honey Glow is executed with absolute mastery. We believe that true grooming is a personal craft—an art form that requires patience, skill, and a meticulous eye for detail. From classic executive cuts and flawless beard sculpting to advanced skin rejuvenation, we cater to the nuanced needs of the modern man.
                         </p>
-                        <p>
+                        <p className="font-description font-light italic text-zinc-300 leading-loose text-lg md:text-xl drop-shadow-lg">
                             At Honey Glow, the atmosphere is as crucial as the service. We have designed our salon to be a haven of masculine luxury, featuring premium seating, ambient lighting, and top-tier grooming products sourced from the finest brands.
                         </p>
                     </div>

@@ -1,5 +1,6 @@
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { Playfair_Display, Lora, Montserrat, Open_Sans } from "next/font/google";
 
 const playfair = Playfair_Display({
@@ -42,6 +43,7 @@ export default function RootLayout({
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        <FloatingWhatsApp />
       </body>
     </html>
   );

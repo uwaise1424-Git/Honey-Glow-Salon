@@ -1,13 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Scissors, Droplets, Crown } from "lucide-react";
 
 export default function Services() {
   const servicesData = [
     {
       title: "Hair & Grooming",
-      icon: <Scissors className="w-8 h-8 text-gold" />,
+      num: "01",
       items: [
         { name: "Haircut", price: "130" },
         { name: "Haircut and Trim", price: "200" },
@@ -19,7 +18,7 @@ export default function Services() {
     },
     {
       title: "Color & Treatments",
-      icon: <Droplets className="w-8 h-8 text-gold" />,
+      num: "02",
       items: [
         { name: "Hair Colouring L'Oréal (Black)", price: "500" },
         { name: "Brown Highlights (Per Strand)", price: "150" },
@@ -30,7 +29,7 @@ export default function Services() {
     },
     {
       title: "Skincare & Wedding",
-      icon: <Crown className="w-8 h-8 text-gold" />,
+      num: "03",
       items: [
         { name: "De-Tan", price: "300" },
         { name: "De-Tan Face & Neck", price: "500" },
@@ -89,11 +88,13 @@ export default function Services() {
               transition={{ duration: 0.7, delay: index * 0.2 }}
               className="bg-surface/50 backdrop-blur-sm border border-gold/20 rounded-2xl p-8 shadow-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.1)] transition-shadow duration-300 group flex flex-col"
             >
-              <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                {category.icon}
+              <div className="mb-6 group-hover:-translate-y-1 transition-transform duration-300">
+                <span className="font-serif text-5xl md:text-6xl font-bold text-[var(--color-gold)] opacity-50 drop-shadow-md">
+                  {category.num}
+                </span>
               </div>
 
-              <h3 className="font-serif font-semibold text-2xl md:text-3xl text-text-primary mb-6 pb-4 border-b border-gold/20 tracking-wide">
+              <h3 className="font-serif font-semibold text-2xl md:text-3xl text-white mb-6 pb-4 border-b border-gold/20 tracking-wide">
                 {category.title}
               </h3>
 
@@ -107,11 +108,11 @@ export default function Services() {
                     transition={{ duration: 0.4, delay: 0.4 + (index * 0.2) + (i * 0.1) }}
                     className="flex justify-between items-end gap-4 group/item"
                   >
-                    <span className="text-text-primary font-medium text-base md:text-lg tracking-wide group-hover/item:text-gold transition-colors">
+                    <span className="font-description font-light italic text-zinc-300 text-lg md:text-xl drop-shadow-lg group-hover/item:text-[var(--color-gold)] transition-colors">
                       {item.name}
                     </span>
-                    <div className="flex-1 border-b border-dashed border-gold/20 mb-1 opacity-50"></div>
-                    <span className="text-gold font-bold text-base md:text-lg">
+                    <div className="flex-1 border-b border-dashed border-gold/20 mb-2 opacity-50"></div>
+                    <span className="text-[var(--color-gold)] font-serif italic text-lg md:text-xl drop-shadow-md">
                       ₹{item.price}
                     </span>
                   </motion.li>

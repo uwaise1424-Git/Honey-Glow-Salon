@@ -31,7 +31,7 @@ export default function FAQ() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-gold uppercase tracking-[0.25em] text-xs font-bold mb-4 block"
+            className="font-serif font-bold uppercase tracking-[0.2em] text-sm text-[var(--color-gold)] mb-4 block"
           >
             Got Questions?
           </motion.span>
@@ -40,9 +40,9 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-serif font-light text-4xl md:text-5xl text-text-primary tracking-tight"
+            className="font-serif text-4xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight"
           >
-            Frequently Asked <span className="font-medium">Questions</span>
+            Frequently Asked Questions
           </motion.h2>
         </div>
 
@@ -56,11 +56,11 @@ export default function FAQ() {
               transition={{ delay: index * 0.1 }}
               className="bg-surface/30 border border-white/5 p-8 rounded-2xl hover:border-gold/20 transition-colors duration-300 group"
             >
-              <h3 className="text-lg font-medium text-text-primary mb-4 flex items-start gap-3">
+              <h3 className="font-serif text-lg md:text-xl font-bold text-white mb-4 flex items-start gap-3 leading-snug">
                 <Plus className="w-5 h-5 text-gold shrink-0 mt-0.5 group-hover:rotate-90 transition-transform duration-300" />
                 {faq.question}
               </h3>
-              <p className="text-text-muted font-light leading-relaxed pl-8">
+              <p className="description text-zinc-300 text-base md:text-lg drop-shadow-lg leading-relaxed pl-8">
                 {faq.answer}
               </p>
             </motion.div>
